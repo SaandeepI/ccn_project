@@ -1,0 +1,27 @@
+As per the iteration plan, we have researched several ways to implement this project. 
+We looked into the possibility of implementing this using Mediapipe, ml5.js PseNet and MMAction2 TSN Model, 
+where we found that MMAction2 TSN Model or PoseNet can be a good choice for implementing pose estimation for the gym activities. 
+
+Building a basic gym tracker using pre-trained MMAction2 models in a client-server architecture involves several steps, to start off
+with the networking part we have drafted a blue print of what can be done in client server architecture.
+
+Here are the steps:
+
+Server-Side Implementation-
+Installing frameworks, as of now we want to use Flask to handle HTTP client requests.
+Loading the pre trained model
+Define API endpoints to receive video data from client
+Using the model, recognize and monitor the exercise performed
+Return the results to client as HTTP responses
+
+Client Side Implementation-
+Build web page to capture video data
+Send video to server using HTTP requests
+Display the requests
+
+Reference links we have looked into :
+https://google.github.io/mediapipe/solutions/pose_classification.html
+https://learn.ml5js.org/#/reference/posenet
+https://github.com/open-mmlab/mmaction2
+https://ckaestne.medium.com/deploying-a-model-f0b7ffefd06a
+

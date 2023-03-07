@@ -1,0 +1,15 @@
+As a first step, We chose the TSN R50 pre-trained model fine-tuned on the HMDB51 dataset for human activity recognition from the MMACTION2 repository, including gym exercises.
+
+Link to the model file: https://raw.githubusercontent.com/open-mmlab/mmaction2/master/configs/recognition/tsn/tsn_r50_1x1x8_50e_hmdb51_kinetics400_rgb.py
+
+Steps:
+Clone the mmaction2 repository.
+Installing the necessary dependencies and libraries required for running the pre-trained TSN model. This includes Python, PyTorch, OpenCV, and MMACTION2.
+Download the pre-trained TSN model from the MMACTION2 repository.Then loading the model using PyTorch.
+Specify the device on which you want to run the model (CPU or GPU). (We used google collab (GPU runtime).
+Specify the classes to track and initialize rep counts. (Bicep Curls, Squats and Pushups)
+Capture video frames: To track the user's movements, capture video frames using the device camera.
+Process the video frames: Once you have captured the video frames, you can process them using the pre-trained TSN model.
+The model will analyze the frames and classify the user's movements as per the exercise in progress.
+
+

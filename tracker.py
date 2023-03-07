@@ -27,7 +27,23 @@ cfg.data.workers_per_gpu = 1
 
 #load the model using PyTorch and specify the device on which you want to run the model (CPU or GPU).
 model = init_recognizer(cfg, checkpoint=checkpoint_file, device='cuda:0')
+# Capture video frames
+cap = cv2.VideoCapture(0) # Use the default camera
+while True:
+    ret, frame = cap.read()
+    if ret:
+        # Process the frame using the pre-trained TSN model
+        result = inference_recognizer(model, frame, 'RGB')
+        # Output the results
+        print(result)
+        cv2.imshow('frame', frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    else:
+        break
 
+cap.release()
+cv2.destroyAllWindows()
 
 
 

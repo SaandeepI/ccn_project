@@ -4,12 +4,14 @@
 !pip install mmcv-full==1.3.14 -f https://download.openmmlab.com/mmcv/dist/cu102/torch1.9.0/index.html
 !pip install mmdet==2.17.0
 !pip install mmaction2
+!pip install streamlit
 
 # import the modules
 import torch
 from mmcv import Config
 from mmaction.apis import inference_recognizer, init_recognizer
 import cv2
+import streamlit as st
 
 # Download the pre-trained TSN model config file from the MMACTION2 repository. 
 !wget https://raw.githubusercontent.com/open-mmlab/mmaction2/master/configs/recognition/tsn/tsn_r50_1x1x8_50e_hmdb51_kinetics400_rgb.py
@@ -27,24 +29,28 @@ cfg.data.workers_per_gpu = 1
 
 #load the model using PyTorch and specify the device on which you want to run the model (CPU or GPU).
 model = init_recognizer(cfg, checkpoint=checkpoint_file, device='cuda:0')
-# Capture video frames
-cap = cv2.VideoCapture(0) # Use the default camera
-while True:
-    ret, frame = cap.read()
-    if ret:
-        # Process the frame using the pre-trained TSN model
-        result = inference_recognizer(model, frame, 'RGB')
-        # Output the results
-        print(result)
-        cv2.imshow('frame', frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+
+def main():
+    st.title("Rep Tracking using Pre-trained TSN Model")
+    # Capture video frames
+    cap = cv2.VideoCapture(0) # Use the default camera
+    while True:
+        ret, frame = cap.read()
+        if ret:
+            # Process the frame using the pre-trained TSN model
+            result = inference_recognizer(model, frame, 'RGB')
+            # Output the results
+            st.write(f"Action: {result['label']}, Confidence: {result['score']}")
+            st.image(frame, channels="BGR")
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+        else:
             break
-    else:
-        break
 
-cap.release()
-cv2.destroyAllWindows()
+    cap.release()
+    cv2.destroyAllWindows()
 
-
+if __name__ == '__main__':
+    main()
 
 

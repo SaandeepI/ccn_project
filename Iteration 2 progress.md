@@ -11,3 +11,5 @@ The code works perfectly fine and is ready to be integrated with the streamlit a
 
 In parallel, we will have a look into the other models as well and if we found any other model that suits the usecase well and provides the desired output then we will
 integrate it into the streamlit app and proceed further on that. 
+
+In this branch, we have also added a samplestreamlit.py file to visualise the pose detection. You can run this code by running this command in the terminal "streamlit run samplestreamlit.py" (Make sure to install the necessesary modules mediapipe,streamlit,open-cv and numpy)

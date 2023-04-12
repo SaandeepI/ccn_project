@@ -142,7 +142,7 @@ def main():
 
     webrtc_ctx = streamlit_webrtc.webrtc_streamer(
         key="example",
-        video_transformer_factory=create_exercise_tracker(exercise)
+        video_processor_factory=create_exercise_tracker(exercise)
     )
 
 if __name__ == "__main__":

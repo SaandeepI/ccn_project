@@ -140,10 +140,19 @@ def main():
         ("Bicep Curls", "Pushups", "Squats")
     )
 
+    # Add TURN server configuration
+    import streamlit_webrtc
+    streamlit_webrtc.config.set_turn_config(
+        turn_server_uri="turn:numb.viagenie.ca:3478",
+        turn_server_username="webrtc",
+        turn_server_password="webrtc"
+    )
+
     webrtc_ctx = streamlit_webrtc.webrtc_streamer(
         key="example",
         video_processor_factory=create_exercise_tracker(exercise)
     )
+
 
 if __name__ == "__main__":
     main()

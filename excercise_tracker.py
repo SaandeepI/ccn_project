@@ -146,7 +146,7 @@ def main():
             rtc_configuration={
                 "iceServers": [{"urls": "stun:stun.l.google.com:19302"}]
             }
-        ),
+        ).to_dict(),
         video_processor_factory=create_exercise_tracker(exercise),
     )
 

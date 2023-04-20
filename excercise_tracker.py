@@ -113,7 +113,7 @@ class ExerciseTracker:
             self.squat_counter += 1
             print("Squats:", self.squat_counter)
 
-class VideoTransformer(streamlit_webrtc.VideoTransformerBase):
+class VideoTransformer(streamlit_webrtc.VideoProcessorBase):
     def __init__(self, exercise):
         self.exercise_tracker = ExerciseTracker()
         if exercise == "Bicep Curls":
@@ -142,8 +142,9 @@ def main():
 
     webrtc_ctx = streamlit_webrtc.webrtc_streamer(
         key="example",
-        video_transformer_factory=create_exercise_tracker(exercise)
+        video_processor_factory=create_exercise_tracker(exercise)
     )
+
 
 if __name__ == "__main__":
     main()

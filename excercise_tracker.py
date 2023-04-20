@@ -142,12 +142,16 @@ def main():
 
     webrtc_ctx = streamlit_webrtc.webrtc_streamer(
         key="example",
+        mode=streamlit_webrtc.ClientSettings(
+            rtc_configuration={
+                "iceServers": [{"urls": "stun:stun.l.google.com:19302"}]
+            }
+        ),
         video_processor_factory=create_exercise_tracker(exercise),
-        # Add the following line to configure the STUN server
-        configuration={"iceServers": [{"urls": "stun:stun.l.google.com:19302"}]},
     )
 
 if __name__ == "__main__":
     main()
+
 
 

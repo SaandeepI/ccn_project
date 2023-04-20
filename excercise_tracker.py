@@ -140,12 +140,11 @@ def main():
         ("Bicep Curls", "Pushups", "Squats")
     )
 
-    # Add the following line to configure the STUN server
-    streamlit_webrtc.set_streamlit_webrtc_config(stun_server="stun:stun.l.google.com:19302")
-
     webrtc_ctx = streamlit_webrtc.webrtc_streamer(
         key="example",
-        video_processor_factory=create_exercise_tracker(exercise)
+        video_processor_factory=create_exercise_tracker(exercise),
+        # Add the following line to configure the STUN server
+        configuration={"iceServers": [{"urls": "stun:stun.l.google.com:19302"}]},
     )
 
 if __name__ == "__main__":

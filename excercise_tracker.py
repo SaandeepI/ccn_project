@@ -140,10 +140,28 @@ def main():
         ("Bicep Curls", "Pushups", "Squats")
     )
 
+    rtc_configuration = {
+        "iceServers": [
+            {
+                "urls": [
+                    "stun:stun.l.google.com:19302",
+                    "stun:stun1.l.google.com:19302",
+                ],
+            },
+            {
+                "urls": "turn:numb.viagenie.ca",
+                "username": "webrtc@live.com",
+                "credential": "muazkh",
+            },
+        ],
+    }
+
     webrtc_ctx = streamlit_webrtc.webrtc_streamer(
         key="example",
-        video_processor_factory=create_exercise_tracker(exercise)
+        video_processor_factory=create_exercise_tracker(exercise),
+        rtc_configuration=rtc_configuration
     )
 
 if __name__ == "__main__":
     main()
+

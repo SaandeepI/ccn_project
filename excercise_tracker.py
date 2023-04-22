@@ -8,7 +8,7 @@ import streamlit_webrtc
 import logging
 import aiortc
 logging.basicConfig(level=logging.DEBUG)
-aiortc.set_debug(True)
+#aiortc.set_debug(True)
 
 
 mp_drawing = mp.solutions.drawing_utils

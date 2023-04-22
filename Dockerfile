@@ -5,7 +5,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     pip install --no-cache-dir --upgrade pip
 
-RUN pip install --no-cache-dir streamlit opencv-python-headless mediapipe
+RUN pip install --no-cache-dir streamlit opencv-python-headless mediapipe aiortc
 
 WORKDIR /app
 

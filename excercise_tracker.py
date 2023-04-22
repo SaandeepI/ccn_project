@@ -1,8 +1,12 @@
+
+
 import cv2
 import mediapipe as mp
 import numpy as np
 import streamlit as st
 import streamlit_webrtc
+import logging
+logging.basicConfig(level=logging.DEBUG)
 
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose

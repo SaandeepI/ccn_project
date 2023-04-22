@@ -113,7 +113,7 @@ class ExerciseTracker:
             self.squat_counter += 1
             print("Squats:", self.squat_counter)
 
-class VideoTransformer(streamlit_webrtc.VideoProcessorBase):
+class VideoTransformer(streamlit_webrtc.VideoTransformerBase):
     def __init__(self, exercise):
         self.exercise_tracker = ExerciseTracker()
         if exercise == "Bicep Curls":
@@ -142,10 +142,7 @@ def main():
 
     webrtc_ctx = streamlit_webrtc.webrtc_streamer(
         key="example",
-        rtc_configuration={
-            "iceServers": [{"urls": "stun:stun.l.google.com:19302"}]
-        },
-        video_processor_factory=create_exercise_tracker(exercise),
+        video_processor_factory=create_exercise_tracker(exercise)
     )
 
 if __name__ == "__main__":

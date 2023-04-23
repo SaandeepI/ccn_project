@@ -57,6 +57,22 @@ Sometimes the ICE state connection might close pre-maturely. You might have to c
 <b>To verify the project:</b><br>
 Download the <b>excercise_tracker.py</b> file and follow the <b>instructions.md</b> file in the repository on how to run and visualize the output.
 
+<h3>Scope for improvement</h3>
+
+Please note that this code accurately detects only the bicep-curls and squats. Pushups were added in the code as a future improvement and the code logic for the pushup excercise needs to be refined.
+
+Many other excercises can also be included in the application. 
+
+Try to use a different AI model that accurately detects the poses and also use a different method to deploy this application.
+
+Refine the excercise code logics using more complex mathematical calculations to improve the accuracy.
+
+Store the users progress and provide data predictions on the fitness goals.
+
+
+
+
+
 <h3>Challenges</h3>
 
 During the development of the Exercise Tracker AI App, several challenges were encountered:

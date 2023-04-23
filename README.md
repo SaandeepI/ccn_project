@@ -41,6 +41,22 @@ Exercise Tracking and Counting: The application includes separate methods for tr
 
 Visual Feedback: The application overlays the count of each exercise on the video feed using OpenCV. This provides real-time visual feedback to the user, allowing them to monitor their performance and progress.
 
+This application is deployed in the streamlit community cloud.<br>
+https://saandeepi-ccn-project-excercise-tracker-group-18-iterati-zus8wt.streamlit.app/
+
+Please note that sometimes the streamlit-webrtc connection encounter issues due to several reasons. In such cases:
+
+Make sure you have installed all the latest versions of the dependencies.
+
+Check your network settings: Ensure that your network settings, firewall, and router configurations allow WebRTC connections. You may need to check your router settings or consult your network administrator for assistance.
+
+Inspect browser compatibility: Ensure that your app is compatible with the browser you are testing it on. While most modern browsers support WebRTC, there might be specific features or configurations that are not fully compatible with certain browser versions.
+
+Sometimes the ICE state connection might close pre-maturely. You might have to create a new TURN server to establish the connection. 
+
+<b>To verify the project:</b><br>
+Download the <b>excercise_tracker.py</b> file and follow the <b>instructions.md</b> file in the repository on how to run and visualize the output.
+
 <h3>Challenges</h3>
 
 During the development of the Exercise Tracker AI App, several challenges were encountered:
@@ -54,6 +70,8 @@ Some users may have different exercise techniques or body types, leading to occa
 Real-time video processing: Ensuring smooth and real-time video processing was challenging, as it required optimizing the performance of the application and handling video frames efficiently.
 
 Integration of multiple libraries: Combining OpenCV, MediaPipe, Streamlit, and Streamlit-WebRTC required an understanding of each library's functionality and compatibility to successfully integrate them into the application.
+
+
 
 
 

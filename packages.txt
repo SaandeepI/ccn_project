@@ -1,6 +1,0 @@
-deb http://deb.debian.org/debian/ bullseye main contrib non-free
-libgl1
-libglib2.0-0
-libsm6
-libxext6
-libxrender-dev

@@ -145,12 +145,5 @@ def main():
         video_processor_factory=create_exercise_tracker(exercise)
     )
 
-    while True:
-        if webrtc_ctx.video_transformer:
-            result = webrtc_ctx.video_transformer.result_queue.get()
-            st.table(result)
-        else:
-            break
-
 if __name__ == "__main__":
     main()

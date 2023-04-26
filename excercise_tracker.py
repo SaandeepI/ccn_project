@@ -4,8 +4,30 @@ import numpy as np
 import streamlit as st
 import streamlit_webrtc
 
+from aiortc import RTCIceServer, RTCConfiguration
+
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
+
+# Your TURN server configuration
+turn_server = {
+    'urls': [
+        "stun:a.relay.metered.ca:80",
+        "turn:a.relay.metered.ca:80",
+        "turn:a.relay.metered.ca:80?transport=tcp",
+        "turn:a.relay.metered.ca:443",
+        "turn:a.relay.metered.ca:443?transport=tcp"
+    ],
+    'username': '627a0a599fc93ddf9246a097',
+    'credential': 'cMrZMsKf1nZjCGMA'
+}
+
+rtc_configuration = RTCConfiguration(
+    iceServers=[
+        RTCIceServer(urls=turn_server['urls'], username=turn_server['username'], credential=turn_server['credential'])
+    ]
+)
+
 
 class ExerciseTracker:
     def __init__(self):
@@ -142,7 +164,8 @@ def main():
 
     webrtc_ctx = streamlit_webrtc.webrtc_streamer(
         key="example",
-        video_processor_factory=create_exercise_tracker(exercise)
+        video_processor_factory=create_exercise_tracker(exercise),
+        rtc_configuration=rtc_configuration
     )
 
 if __name__ == "__main__":

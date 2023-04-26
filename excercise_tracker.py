@@ -151,8 +151,7 @@ def main():
         "Select exercise",
         ("Bicep Curls", "Pushups", "Squats")
     )
-
-   webrtc_ctx = streamlit_webrtc.webrtc_streamer(
+    webrtc_ctx = streamlit_webrtc.webrtc_streamer(
     key="example",
     video_processor_factory=create_exercise_tracker(exercise),
     configuration={

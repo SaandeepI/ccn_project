@@ -7,6 +7,18 @@ import streamlit_webrtc
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
+streamlit_webrtc.set_ice_servers([
+    {
+        "urls": [
+            "stun:stun.l.google.com:19302",
+            "stun:stun1.l.google.com:19302",
+            "stun:stun2.l.google.com:19302",
+            "stun:stun3.l.google.com:19302",
+            "stun:stun4.l.google.com:19302",
+        ]
+    }
+])
+
 class ExerciseTracker:
     def __init__(self):
         self.pose = mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5)

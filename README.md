@@ -7,6 +7,10 @@ This Exercise Tracker application is a web-based AI gym assistant that uses the 
 ![image](https://user-images.githubusercontent.com/124635398/233852762-93fbae58-8e47-4365-9250-5652e42058e5.png)
 
 
+<h3>To verify or replicate the project:</h3>
+Download the <b>excercise_tracker.py</b> file and follow the <b>instructions.md</b> file in the repository on how to run and visualize the output.
+
+
 <h3>Implementation Details</h3>
 
 The app is built using Python, OpenCV, MediaPipe, Streamlit, and Streamlit-WebRTC. The architecture of the app consists of the following components:
@@ -42,7 +46,9 @@ Exercise Tracking and Counting: The application includes separate methods for tr
 Visual Feedback: The application overlays the count of each exercise on the video feed using OpenCV. This provides real-time visual feedback to the user, allowing them to monitor their performance and progress.
 
 This application is deployed in the streamlit community cloud.<br>
-https://saandeepi-ccn-project-excercise-tracker-group-18-iterati-zus8wt.streamlit.app/
+https://saandeepi-ccn-project-excercise-tracker-group-18-iterati-c9tlo9.streamlit.app/
+
+This public URL might not work sometimes as the streamlit community cloud continuosly goes through a lot of updates. This might cause several errors like installing dependencies or the server errors during the web-RTC connection.
 
 Please note that sometimes the streamlit-webrtc connection encounter issues due to several reasons. In such cases:
 
@@ -53,9 +59,6 @@ Check your network settings: Ensure that your network settings, firewall, and ro
 Inspect browser compatibility: Ensure that your app is compatible with the browser you are testing it on. While most modern browsers support WebRTC, there might be specific features or configurations that are not fully compatible with certain browser versions.
 
 Sometimes the ICE state connection might close pre-maturely. You might have to create a new TURN server to establish the connection. 
-
-<b>To verify the project:</b><br>
-Download the <b>excercise_tracker.py</b> file and follow the <b>instructions.md</b> file in the repository on how to run and visualize the output.
 
 <h3>Scope for improvement</h3>
 
